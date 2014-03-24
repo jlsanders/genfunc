@@ -1,3 +1,5 @@
+# genfunc
+
 Code developed for [Sanders & Binney (2014)](http://arxiv.org/abs/1401.3600)
 
 This code is designed to estimate actions, angles and frequencies from an orbit
