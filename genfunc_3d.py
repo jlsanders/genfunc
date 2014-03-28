@@ -240,11 +240,13 @@ def find_actions(results, t, N_matrix=8, use_box=False, ifloop=False, ifprint = 
             if(ifprint):
                 print "Failed to find actions for this orbit"
             return
-        if(loop[0]):
-            L[0][1],L[0][2]=L[0][2],L[0][1]
-            L[1][1],L[1][2]=L[1][2],L[1][1]
-            L[1][4],L[1][5]=L[1][5],L[1][4]
-            L[3].T[1],L[3].T[2]=L[3].T[2],L[3].T[1]
+        # Used for switching J_2 and J_3 for long-axis loop orbits
+        # This is so the orbit classes form a continuous plane in action space
+        # if(loop[0]):
+        #     L[0][1],L[0][2]=L[0][2],L[0][1]
+        #     L[1][1],L[1][2]=L[1][2],L[1][1]
+        #     L[1][4],L[1][5]=L[1][5],L[1][4]
+        #     L[3].T[1],L[3].T[2]=L[3].T[2],L[3].T[1]
     else:
         L = box_actions(results,t,N_matrix, ifprint)
         if(L==None):
